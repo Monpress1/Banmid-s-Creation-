@@ -5,7 +5,17 @@ import gallery3 from "@/assets/gallery-3.jpg";
 import gallery4 from "@/assets/gallery-4.jpg";
 import gallery5 from "@/assets/gallery-5.jpg";
 import gallery6 from "@/assets/gallery-6.jpg";
-import gallery7 from "@/assets/gallery-7.jpg";
+
+
+
+
+
+import gallery7 from "@/assets/men.jpg";
+
+
+
+
+
 
 const images = [
   { src: gallery1, alt: "Elegant blue ball gown" },
@@ -14,8 +24,13 @@ const images = [
   { src: gallery4, alt: "Runway floral dress design" },
   { src: gallery5, alt: "Royal blue flowing gown" },
   { src: gallery6, alt: "African print runway dress" },
-  { src: gallery7, alt: "White bridal gown with ruffles" },
+  { src: gallery7, alt: "men outfit" },
 ];
+
+
+
+
+
 
 const DraggableGallery = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
