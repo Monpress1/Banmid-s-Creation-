@@ -28,12 +28,21 @@ const Gallery = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-secondary">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="font-display text-4xl md:text-6xl font-semibold text-foreground mb-6">
-            Our <span className="text-primary">Gallery</span>
+      <section className="pt-32 pb-20 gradient-dark relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-10 w-72 h-72 gradient-primary rounded-full blur-3xl animate-float" />
+        </div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <span className="inline-block px-4 py-2 rounded-full bg-background/10 text-background font-body text-sm uppercase tracking-widest mb-6">
+            Portfolio
+          </span>
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-background mb-6">
+            Our{" "}
+            <span className="gradient-text" style={{ WebkitTextFillColor: 'transparent', background: 'var(--gradient-primary)', WebkitBackgroundClip: 'text', backgroundClip: 'text' }}>
+              Gallery
+            </span>
           </h1>
-          <p className="font-body text-muted-foreground max-w-2xl mx-auto text-lg">
+          <p className="font-body text-background/70 max-w-2xl mx-auto text-lg">
             Explore our collection of stunning creations. Each piece tells a story of 
             craftsmanship, elegance, and attention to detail.
           </p>
@@ -47,17 +56,17 @@ const Gallery = () => {
             {images.map((image, index) => (
               <div
                 key={index}
-                className="break-inside-avoid cursor-pointer group relative overflow-hidden rounded-lg"
+                className="break-inside-avoid cursor-pointer group relative overflow-hidden rounded-3xl shadow-card hover-lift"
                 onClick={() => setSelectedImage(image.src)}
               >
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/40 transition-colors duration-300 flex items-end">
-                  <div className="p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <span className="inline-block px-3 py-1 bg-primary text-primary-foreground text-xs font-body uppercase tracking-wider rounded-full">
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-6">
+                    <span className="inline-block px-4 py-2 gradient-primary text-primary-foreground text-xs font-body uppercase tracking-wider rounded-full shadow-glow">
                       {image.category}
                     </span>
                   </div>
@@ -71,20 +80,20 @@ const Gallery = () => {
       {/* Lightbox */}
       {selectedImage && (
         <div
-          className="fixed inset-0 z-50 bg-foreground/95 flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-foreground/95 backdrop-blur-xl flex items-center justify-center p-4"
           onClick={() => setSelectedImage(null)}
         >
           <button
-            className="absolute top-6 right-6 text-background hover:text-primary transition-colors"
+            className="absolute top-6 right-6 w-12 h-12 bg-background/10 hover:bg-primary rounded-xl flex items-center justify-center text-background transition-all duration-300"
             onClick={() => setSelectedImage(null)}
             aria-label="Close lightbox"
           >
-            <X size={32} />
+            <X size={24} />
           </button>
           <img
             src={selectedImage}
             alt="Gallery image enlarged view"
-            className="max-w-full max-h-[90vh] object-contain rounded-lg"
+            className="max-w-full max-h-[90vh] object-contain rounded-3xl shadow-elevated"
             onClick={(e) => e.stopPropagation()}
           />
         </div>
