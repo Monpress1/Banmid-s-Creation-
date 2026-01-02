@@ -305,7 +305,7 @@ const Index = () => {
                   </div>
                   <div>
                     <p className="font-body text-sm text-background/60">Location</p>
-                    <p className="font-body text-background">Available Across Nigeria</p>
+                    <p className="font-body text-background">Makurdi</p>
                   </div>
                 </div>
               </div>
