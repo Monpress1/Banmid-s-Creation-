@@ -9,10 +9,6 @@ import gallery4 from "@/assets/gallery-4.jpg";
 import gallery5 from "@/assets/gallery-5.jpg";
 import gallery6 from "@/assets/gallery-6.jpg";
 import gallery7 from "@/assets/gallery-7.jpg";
-// Added only these 3 imports
-import menImg from "@/assets/men.jpg";
-import beadImg from "@/assets/bead.jpg";
-import men2Img from "@/assets/men2.jpg";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -25,10 +21,6 @@ const Gallery = () => {
     { src: gallery5, alt: "Royal blue flowing gown with tulle details", category: "Gowns" },
     { src: gallery6, alt: "African print runway dress with bold patterns", category: "Runway" },
     { src: gallery7, alt: "White bridal gown with cascading ruffles", category: "Bridal" },
-    // Added these 3 objects to your array
-    { src: menImg, alt: "Traditional male attire", category: "Male Clothing" },
-    { src: beadImg, alt: "Intricate bead work", category: "Bead Works" },
-    { src: men2Img, alt: "Bespoke men's wear", category: "Male Clothing" },
   ];
 
   return (
@@ -113,3 +105,4 @@ const Gallery = () => {
 };
 
 export default Gallery;
+
