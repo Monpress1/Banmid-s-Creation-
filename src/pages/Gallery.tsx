@@ -2,6 +2,8 @@ import { useState } from "react";
 import { X } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+// Existing Imports
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
@@ -10,10 +12,32 @@ import gallery5 from "@/assets/gallery-5.jpg";
 import gallery6 from "@/assets/gallery-6.jpg";
 import gallery7 from "@/assets/gallery-7.jpg";
 
+// New Imports
+import men1 from "@/assets/men.jpg";
+import beadWork from "@/assets/bead.jpg";
+import men2 from "@/assets/men2.jpg";
+
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const images = [
+    // New Images with appropriate tags
+    { 
+      src: men1, 
+      alt: "Bespoke male traditional attire with precision tailoring", 
+      category: "Male Clothing" 
+    },
+    { 
+      src: beadWork, 
+      alt: "Intricate handcrafted beadwork embellishments", 
+      category: "Bead Works" 
+    },
+    { 
+      src: men2, 
+      alt: "Modern African men's fashion suit", 
+      category: "Male Clothing" 
+    },
+    // Existing Images
     { src: gallery1, alt: "Elegant royal blue ball gown with flowing fabric", category: "Gowns" },
     { src: gallery2, alt: "Detailed corset back design with ribbon lacing", category: "Details" },
     { src: gallery3, alt: "Ankara print corset with traditional patterns", category: "Ankara" },
